@@ -14,7 +14,7 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { description, amount, date } = request.body;
+    const { description, amount, date, expense } = request.body;
 
     const id = crypto.randomBytes(4).toString('HEX');
 
@@ -23,7 +23,8 @@ module.exports = {
         id,
         description,
         amount,
-        date
+        date,
+        expense
 
       });
 
