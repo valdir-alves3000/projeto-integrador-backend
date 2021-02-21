@@ -37,10 +37,7 @@ module.exports = {
   },
 
   async delete(request, response) {
-    const { id } = request.body;
-
-    
-    
+    const id = request.headers.authorization;
     
     const transactions = await connection('transactions')
       .where('id', id)
