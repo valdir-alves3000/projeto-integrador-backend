@@ -22,6 +22,8 @@ const routes = express.Router();
 routes.post('/transactions', Transactions.create);
 routes.get('/transactions', Transactions.index);
 routes.delete('/transactions', Transactions.delete);
+routes.get('/income', Transactions.income);
+routes.get('/expense', Transactions.sumExpense);
 
 routes.post('/cadItensDoados', ItensDoadosController.create);
 routes.get('/cadItensDoados', ItensDoadosController.index);
