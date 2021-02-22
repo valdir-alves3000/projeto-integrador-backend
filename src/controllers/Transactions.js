@@ -54,6 +54,35 @@ module.exports = {
       .delete();
 
     return response.status(204).send();
-  }
+  },
+
+  async income(request, response) {
+    const expense = "0";
+    
+    const [income] = await connection('transactions')
+      .where('expense', expense)
+      .sum('amount');
+
+      console.log(income);
+
+    const result = income['sum(`amount`)'];
+    
+      return response.json(result); 
+  },
+
+  async sumExpense(request, response) {
+    const expense = "1";
+    
+    const [income] = await connection('transactions')
+      .where('expense', expense)
+      .sum('amount');
+
+      console.log(income);
+
+    const result = income['sum(`amount`)'];
+    
+      return response.json(result); 
+  },
   
+
 };
